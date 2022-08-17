@@ -14,6 +14,7 @@ const grade = async (studentId) =>
     },
     {
       // Your code here
+      $group: { _id: studentId, overallGrade: { $avg: '$assignments.score' } },
     },
   ]);
 
